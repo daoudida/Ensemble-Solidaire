@@ -2,28 +2,30 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SolidaireEnsemble - Un don peut changer une vie</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style.css" />
     <script src="js/main.js"></script>
     <style>
         :root {
-            --primary: #2F855A;
-            --secondary: #DD6B20;
-            --light: #F7FAFC;
-            --dark: #1A202C;
+            --primary: #2f855a;
+            --secondary: #dd6b20;
+            --light: #f7fafc;
+            --dark: #1a202c;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #F8F9FA;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
         }
 
         .hero-image {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://img.freepik.com/photos-gratuite/bouchent-concept-communaute-mains_23-2148931127.jpg?semt=ais_items_boosted&w=740');
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+                    rgba(0, 0, 0, 0.5)),
+                url("https://img.freepik.com/photos-gratuite/bouchent-concept-communaute-mains_23-2148931127.jpg?semt=ais_items_boosted&w=740");
             height: 60vh;
             background-position: center;
             background-repeat: no-repeat;
@@ -65,7 +67,7 @@
         }
 
         .nav-link:after {
-            content: '';
+            content: "";
             position: absolute;
             width: 0;
             height: 2px;
@@ -109,13 +111,23 @@
                             un don</a>
                     </div>
                 </div>
+<<<<<<< Updated upstream
+=======
+
+                <a href="compteDonnateur.html"
+                    class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">compte
+                    donnateur</a>
+>>>>>>> Stashed changes
                 <div class="hidden sm:ml-6 sm:flex sm:items-center">
                     <button onclick="window.location.href='connexion.html'"
                         class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium mr-2">
                         Se connecter
                     </button>
-                    <button
-                        class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium">S'inscrire</button>
+                    <button onclick="window.location.href='inscription.html'"
+                        class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full">
+                        S'inscrire
+                    </button>
+
                 </div>
                 <div class="-mr-2 flex items-center sm:hidden">
                     <button type="button"
@@ -143,11 +155,15 @@
             </div>
             <div class="pt-4 pb-3 border-t border-gray-200">
                 <div class="flex items-center px-4">
+                    <a href="connexion.html"
+                        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium mr-2 w-full block text-center">
+                        Se connecter
+                    </a>
+
                     <button
-                        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium mr-2 w-full">Se
-                        <a href="Connexion"></a>connecter</button>
-                    <button
-                        class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full">S'inscrire</button>
+                        class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full">
+                        <a href="Inscription">S'inscrire</a>
+                    </button>
                 </div>
             </div>
         </div>
@@ -156,14 +172,22 @@
     <!-- Hero Section -->
     <section id="accueil" class="hero-image flex items-center justify-center">
         <div class="text-center px-4">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Un don peut changer une vie</h1>
-            <p class="text-xl md:text-2xl text-white mb-8">Rejoignez notre communauté solidaire et faites la différence
-                au Sénégal</p>
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Un don peut changer une vie
+            </h1>
+            <p class="text-xl md:text-2xl text-white mb-8">
+                Rejoignez notre communauté solidaire et faites la différence au
+                Sénégal
+            </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg">Faire
-                    un don</button>
-                <button class="bg-white hover:bg-gray-100 text-green-700 font-bold py-3 px-8 rounded-lg text-lg">Créer
-                    une collecte</button>
+                <button onclick="document.getElementById('collectes').scrollIntoView({ behavior: 'smooth' });"
+                    class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg text-lg">
+                    Faire un don
+                </button>
+                <button onclick="document.getElementById('faire-don').scrollIntoView({ behavior: 'smooth' });"
+                    class="bg-white hover:bg-gray-100 text-green-700 font-bold py-3 px-8 rounded-lg text-lg">
+                    Créer une collecte
+                </button>
             </div>
         </div>
     </section>
@@ -173,15 +197,21 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                 <div class="p-6 rounded-lg border border-gray-200">
-                    <div class="text-green-600 text-5xl font-bold mb-2" id="donators-count">0</div>
+                    <div class="text-green-600 text-5xl font-bold mb-2" id="donators-count">
+                        0
+                    </div>
                     <div class="text-gray-600 text-lg">Donateurs actifs</div>
                 </div>
                 <div class="p-6 rounded-lg border border-gray-200">
-                    <div class="text-green-600 text-5xl font-bold mb-2" id="collects-count">0</div>
+                    <div class="text-green-600 text-5xl font-bold mb-2" id="collects-count">
+                        0
+                    </div>
                     <div class="text-gray-600 text-lg">Collectes en cours</div>
                 </div>
                 <div class="p-6 rounded-lg border border-gray-200">
-                    <div class="text-green-600 text-5xl font-bold mb-2" id="total-donations">0</div>
+                    <div class="text-green-600 text-5xl font-bold mb-2" id="total-donations">
+                        0
+                    </div>
                     <div class="text-gray-600 text-lg">FCFA collectés</div>
                 </div>
             </div>
@@ -191,17 +221,23 @@
     <!-- Current Collects Section -->
     <section id="collectes" class="bg-gray-50 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Collectes en cours</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+                Collectes en cours
+            </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Collect Item 1 -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden collect-card">
                     <img src="https://media.istockphoto.com/id/1430371482/fr/photo/des-b%C3%A9n%C3%A9voles-asiatiques-emballent-des-biens-donn%C3%A9s-et-de-l%C3%A9picerie-%C3%A0-une-banque-alimentaire.jpg?s=612x612&w=0&k=20&c=bNVRONm7edIOkddOf6VmVcBocKPt4oDw5oXJl5x1ylU="
-                        alt="Famille sénégalaise" class="w-full h-48 object-cover">
+                        alt="Famille sénégalaise" class="w-full h-48 object-cover" />
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Aide alimentaire pour la famille Diallo</h3>
-                        <p class="text-gray-600 mb-4">Aidez une famille de 6 personnes à faire face à des difficultés
-                            alimentaires après une mauvaise récolte.</p>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Aide alimentaire pour la famille Diallo
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Aidez une famille de 6 personnes à faire face à des difficultés
+                            alimentaires après une mauvaise récolte.
+                        </p>
 
                         <div class="mb-4">
                             <div class="flex justify-between text-sm mb-1">
@@ -213,8 +249,9 @@
                             </div>
                         </div>
 
-                        <button
-                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
+                        <button class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">
+                            Soutenir
+                        </button>
                     </div>
                 </div>
 
@@ -223,9 +260,13 @@
                     <img src="https://childrenofafrica.org/wp-content/uploads/2021/10/Fondation-children-of-africa-kits-scolaire-2020-2021-80-scaled.jpg"
                         alt="École au Sénégal" class="w-full h-48 object-cover" />
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Scolarité pour les enfants de Ndangane</h3>
-                        <p class="text-gray-600 mb-4">Financement des frais scolaires pour 25 enfants du village de
-                            Ndangane qui risquent d'abandonner l'école.</p>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Scolarité pour les enfants de Ndangane
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Financement des frais scolaires pour 25 enfants du village de
+                            Ndangane qui risquent d'abandonner l'école.
+                        </p>
 
                         <div class="mb-4">
                             <div class="flex justify-between text-sm mb-1">
@@ -237,19 +278,24 @@
                             </div>
                         </div>
 
-                        <button
-                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
+                        <button class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">
+                            Soutenir
+                        </button>
                     </div>
                 </div>
 
                 <!-- Collect Item 3 -->
                 <div class="bg-white rounded-lg shadow-md overflow-hidden collect-card">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqqtoqpHK7Br8FeZOozDiQo40Pn9hkBjh14BOrrzU4fmsiDVShU4ZltK-C2Ol2y59Cu40&usqp=CAU"
-                        alt="Dispensaire à Kédougou" class="w-full h-48 object-cover">
+                        alt="Dispensaire à Kédougou" class="w-full h-48 object-cover" />
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Construction d'un dispensaire à Kédougou</h3>
-                        <p class="text-gray-600 mb-4">Aidez-nous à construire un dispensaire de santé pour permettre à 3
-                            villages d'avoir accès à la santé.</p>
+                        <h3 class="text-xl font-semibold mb-2">
+                            Construction d'un dispensaire à Kédougou
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Aidez-nous à construire un dispensaire de santé pour permettre à
+                            3 villages d'avoir accès à la santé.
+                        </p>
 
                         <div class="mb-4">
                             <div class="flex justify-between text-sm mb-1">
@@ -260,16 +306,21 @@
                                 <div class="progress-fill" style="width: 78%"></div>
                             </div>
                         </div>
-
-                        <button
-                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
                     </div>
                 </div>
             </div>
 
             <div class="text-center mt-10">
+<<<<<<< Updated upstream
                 <button class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg">Voir
                     toutes les collectes</button>
+=======
+                <a href="collecte.html"
+                    class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-8 rounded-lg text-lg inline-block">
+                    Voir toutes les collectes
+                </a>
+
+>>>>>>> Stashed changes
             </div>
         </div>
     </section>
@@ -277,21 +328,26 @@
     <!-- Testimonials Section -->
     <section id="temoignages" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Ils témoignent</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+                Ils témoignent
+            </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Testimonial 1 -->
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md testimonial-card">
                     <div class="flex items-center mb-4">
                         <img src="https://st3.depositphotos.com/12985790/19356/i/450/depositphotos_193566232-stock-photo-portrait-young-smiling-african-american.jpg"
-                            alt="Awa Diop" class="w-12 h-12 rounded-full mr-4">
+                            alt="Awa Diop" class="w-12 h-12 rounded-full mr-4" />
                         <div>
                             <h4 class="font-semibold">Awa Diop</h4>
                             <p class="text-sm text-gray-500">Bénéficiaire - Dakar</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-4">"Grâce aux dons reçus via SolidaireEnsemble, j'ai pu payer les soins
-                        médicaux de ma mère. La solidarité des donateurs m'a redonné espoir."</p>
+                    <p class="text-gray-700 mb-4">
+                        "Grâce aux dons reçus via SolidaireEnsemble, j'ai pu payer les
+                        soins médicaux de ma mère. La solidarité des donateurs m'a redonné
+                        espoir."
+                    </p>
                     <div class="flex text-yellow-400">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -305,14 +361,17 @@
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md testimonial-card">
                     <div class="flex items-center mb-4">
                         <img src="https://img.freepik.com/photos-gratuite/gros-plan-bouleverse-americain-noir-personne_23-2148749582.jpg?semt=ais_items_boosted&w=740"
-                            alt="Ousmane Ndiaye" class="w-12 h-12 rounded-full mr-4">
+                            alt="Ousmane Ndiaye" class="w-12 h-12 rounded-full mr-4" />
                         <div>
                             <h4 class="font-semibold">Ousmane Ndiaye</h4>
                             <p class="text-sm text-gray-500">Donateur - Saint-Louis</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-4">"SolidaireEnsemble m'a permis de venir en aide à ceux qui en ont
-                        vraiment besoin en toute transparence. Je participe régulièrement aux collectes."</p>
+                    <p class="text-gray-700 mb-4">
+                        "SolidaireEnsemble m'a permis de venir en aide à ceux qui en ont
+                        vraiment besoin en toute transparence. Je participe régulièrement
+                        aux collectes."
+                    </p>
                     <div class="flex text-yellow-400">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -326,14 +385,16 @@
                 <div class="bg-gray-50 p-6 rounded-lg shadow-md testimonial-card">
                     <div class="flex items-center mb-4">
                         <img src="https://img.freepik.com/photos-gratuite/belle-femme-africaine-portrait-visage-se-bouchent_53876-148041.jpg?semt=ais_hybrid&w=740"
-                            alt="Fatou Bâ" class="w-12 h-12 rounded-full mr-4">
+                            alt="Fatou Bâ" class="w-12 h-12 rounded-full mr-4" />
                         <div>
                             <h4 class="font-semibold">Fatou Bâ</h4>
                             <p class="text-sm text-gray-500">Bénéficiaire - Thiès</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 mb-4">"Grâce à SolidaireEnsemble, j'ai pu financer la scolarité de mes
-                        enfants. Cette plateforme change véritablement des vies."</p>
+                    <p class="text-gray-700 mb-4">
+                        "Grâce à SolidaireEnsemble, j'ai pu financer la scolarité de mes
+                        enfants. Cette plateforme change véritablement des vies."
+                    </p>
                     <div class="flex text-yellow-400">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -349,13 +410,18 @@
     <!-- Faire un Don Section -->
     <section id="faire-don" class="bg-gray-50 py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Faire un don</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">
+                Faire un don
+            </h2>
             <form class="bg-white rounded-lg shadow-md p-8 space-y-6" id="donation-form">
                 <div>
                     <label for="donor-type" class="block text-gray-700 font-semibold mb-2">Je suis :</label>
                     <select id="donor-type" name="donor-type"
                         class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-600">
-                        <option value="" disabled selected>Choisissez votre statut</option>
+                        <option value="" disabled selected hidden>
+                            Choisissez votre statut
+                        </option>
+
                         <option value="donateur">Donateur</option>
                         <option value="necessiteux">Personne nécessiteuse</option>
                     </select>
@@ -381,12 +447,20 @@
                         class="w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
                 </div>
                 <button type="submit"
-                    class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold text-lg">Faire
-                    un don</button>
+                    class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold text-lg">
+                    Faire un don
+                </button>
             </form>
         </div>
     </section>
 
+<<<<<<< Updated upstream
+=======
+
+
+    <!--fin tout les collectes partie awa ndiaye-->
+
+>>>>>>> Stashed changes
     <!-- Footer -->
     <footer class="bg-dark text-light py-8 mt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -394,7 +468,9 @@
                 <i class="fas fa-hands-helping text-3xl text-green-400 mx-auto"></i>
             </div>
             <p>© 2025 SolidaireEnsemble. Tous droits réservés.</p>
-            <p class="mt-2 text-sm text-gray-400">Contact : contact@solidaireensemble.sn | +221 33 877 40 34</p>
+            <p class="mt-2 text-sm text-gray-400">
+                Contact : contact@solidaireensemble.sn | +221 33 877 40 34
+            </p>
             <div class="mt-4 flex justify-center space-x-6">
                 <a href="#" aria-label="Facebook" class="text-green-400 hover:text-green-600"><i
                         class="fab fa-facebook-f fa-lg"></i></a>
@@ -410,25 +486,30 @@
 
     <!-- Optional JavaScript for Mobile Menu Toggle -->
     <script>
-        const menuButton = document.querySelector('nav button[aria-controls="mobile-menu"]');
-        const mobileMenu = document.getElementById('mobile-menu');
+        const menuButton = document.querySelector(
+            'nav button[aria-controls="mobile-menu"]'
+        );
+        const mobileMenu = document.getElementById("mobile-menu");
 
-        menuButton.addEventListener('click', () => {
-            const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
-            menuButton.setAttribute('aria-expanded', !expanded);
-            mobileMenu.classList.toggle('hidden');
+        menuButton.addEventListener("click", () => {
+            const expanded =
+                menuButton.getAttribute("aria-expanded") === "true" || false;
+            menuButton.setAttribute("aria-expanded", !expanded);
+            mobileMenu.classList.toggle("hidden");
         });
 
         // Example of incrementing stats for demo (can be replaced with real data)
-        document.getElementById('donators-count').textContent = '1,234';
-        document.getElementById('collects-count').textContent = '15';
-        document.getElementById('total-donations').textContent = '5 670 000';
+        document.getElementById("donators-count").textContent = "1,234";
+        document.getElementById("collects-count").textContent = "15";
+        document.getElementById("total-donations").textContent = "5 670 000";
 
         // Donation form submission handler (simple alert for demo)
-        const donationForm = document.getElementById('donation-form');
-        donationForm.addEventListener('submit', (e) => {
+        const donationForm = document.getElementById("donation-form");
+        donationForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            alert('Merci pour votre générosité ! Votre don a bien été pris en compte.');
+            alert(
+                "Merci pour votre générosité ! Votre don a bien été pris en compte."
+            );
             donationForm.reset();
         });
     </script>

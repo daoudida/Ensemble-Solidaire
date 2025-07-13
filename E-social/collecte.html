@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SolidaireEnsemble - Un don peut changer une vie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <script src="js/main.js"></script>
+    <style>
+        :root {
+            --primary: #2F855A;
+            --secondary: #DD6B20;
+            --light: #F7FAFC;
+            --dark: #1A202C;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F8F9FA;
+        }
+
+        .hero-image {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://img.freepik.com/photos-gratuite/bouchent-concept-communaute-mains_23-2148931127.jpg?semt=ais_items_boosted&w=740');
+            height: 60vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .testimonial-card {
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .progress-bar {
+            height: 10px;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 5px;
+            background-color: var(--primary);
+            transition: width 0.5s ease;
+        }
+
+        .collect-card {
+            transition: all 0.3s ease;
+        }
+
+        .collect-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .hero-image {
+                height: 40vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-hands-helping text-3xl text-green-600 mr-2"></i>
+                        <span class="text-xl font-bold text-gray-800">SolidaireEnsemble</span>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#accueil"
+                            class="nav-link border-green-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Accueil</a>
+                        <a href="#collectes"
+                            class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Collectes</a>
+                        <a href="#temoignages"
+                            class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Témoignages</a>
+                        <a href="#faire-don"
+                            class="nav-link border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Faire
+                            un don</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <button
+                        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium mr-2">Se
+                        connecter</button>
+                    <button
+                        class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium">S'inscrire</button>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#accueil"
+                    class="bg-green-50 border-green-500 text-green-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Accueil</a>
+                <a href="#collectes"
+                    class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Collectes</a>
+                <a href="#temoignages"
+                    class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Témoignages</a>
+                <a href="#faire-don"
+                    class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Faire
+                    un don</a>
+            </div>
+            <div class="pt-4 pb-3 border-t border-gray-200">
+                <div class="flex items-center px-4">
+                    <button
+                        class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium mr-2 w-full">Se
+                        <a href="conexion"></a>connecter</button>
+                    <button
+                        class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md text-sm font-medium w-full"><a
+                            href="inscription.html"></a>S'inscrire</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- tout les collectes partie awa ndiaye-->
+    <section id="toutcollectes" class="bg-gray-50 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Toutes les Collectes</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Collect Item 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden collect-card">
+                    <img src="img/images.jpg" alt="Famille sénégalaise" class="w-full h-48 object-cover">
+
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Aide alimentaire pour la famille Diallo</h3>
+                        <p class="text-gray-600 mb-4">Aidez une famille de 6 personnes à faire face à des difficultés
+                            alimentaires après une mauvaise récolte.</p>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Collecté : 450 000 FCFA</span>
+                                <span>Objectif : 750 000 FCFA</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
+                    </div>
+                </div>
+
+                <!-- Collect Item 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden collect-card">
+                    <img src="img/images.jpg
+                        alt=" École au Sénégal class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Scolarité pour les enfants de Ndangane</h3>
+                        <p class="text-gray-600 mb-4">Financement des frais scolaires pour 25 enfants du village de
+                            Ndangane qui risquent d'abandonner l'école.</p>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Collecté : 1 200 000 FCFA</span>
+                                <span>Objectif : 2 500 000 FCFA</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 48%"></div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
+                    </div>
+                </div>
+
+                <!-- Collect Item 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden collect-card">
+                    <img src="img/" alt="" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Construction d'un dispensaire à Kédougou</h3>
+                        <p class="text-gray-600 mb-4">Aidez-nous à construire un dispensaire de santé pour permettre à 3
+                            villages
+                            d'avoir accès à la santé.</p>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Collecté : 2 750 000 FCFA</span>
+                                <span>Objectif : 3 500 000 FCFA</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
+                <!-- Collect Item 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden collect-card">
+                    <img src="img/images.jpg
+                        alt=" Famille sénégalaise class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Soutien pour l'Orphelinat Sainte Espérance</h3>
+                        <p class="text-gray-600 mb-4">
+                            Aidez à subvenir aux besoins essentiels de 25 enfants orphelins : nourriture, vêtements,
+                            fournitures scolaires et soins médicaux.
+                        </p>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Collecté : 100 000 FCFA</span>
+                                <span>Objectif : 60 000 FCFA</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
+                    </div>
+                </div>
+
+                <!-- Collect Item 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden collect-card">
+                    <img src="img/images.jpg
+                        alt=" École au Sénégal class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Accès à l’eau potable pour le village de Goudiry</h3>
+                        <p class="text-gray-600 mb-4">
+                            Contribuez à la construction d’un puits afin de fournir de l’eau potable à plus de 200
+                            habitants du village de Goudiry.
+                        </p>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Collecté : 700 000 FCFA</span>
+                                <span>Objectif : 800 000 FCFA</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 48%"></div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
+                    </div>
+                </div>
+
+                <!-- Collect Item 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden collect-card">
+                    <img src="img/" alt="" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Cantine scolaire pour les enfants de Ziguinchor</h3>
+                        <p class="text-gray-600 mb-4">
+                            Participez à l’ouverture d’une cantine pour offrir un repas chaud par jour à plus de 100
+                            élèves issus de familles défavorisées.
+                        </p>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Collecté : 750 000 FCFA</span>
+                                <span>Objectif : 500 000 FCFA</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 78%"></div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
+                <!-- Collect Item 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden collect-card">
+                    <img src="img/dispensaire.jpg" alt="Dispensaire de village" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Construction d’un dispensaire à Kédougou</h3>
+                        <p class="text-gray-600 mb-4">
+                            Aidez-nous à construire un dispensaire de santé pour permettre à 3 villages d’avoir accès à
+                            des soins de proximité.
+                        </p>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Collecté : 900 000 FCFA</span>
+                                <span>Objectif : 2 000 000 FCFA</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%"></div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
+                    </div>
+                </div>
+
+                <!-- Collect Item 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden collect-card">
+                    <img src="img/agriculture.jpg" alt="Agriculteurs sénégalais" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Appui agricole pour les femmes de Tambacounda</h3>
+                        <p class="text-gray-600 mb-4">
+                            Soutenez 50 femmes productrices avec du matériel agricole et des semences pour relancer
+                            leurs cultures.
+                        </p>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Collecté : 300 000 FCFA</span>
+                                <span>Objectif : 1 200 000 FCFA</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 25%"></div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
+                    </div>
+                </div>
+
+                <!-- Collect Item 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden collect-card">
+                    <img src="img/solaire.jpg" alt="Panneaux solaires en milieu rural" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Électrification solaire pour une école rurale</h3>
+                        <p class="text-gray-600 mb-4">
+                            Offrez l’électricité à une école reculée grâce à des panneaux solaires pour améliorer les
+                            conditions d’apprentissage.
+                        </p>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Collecté : 1 500 000 FCFA</span>
+                                <span>Objectif : 3 000 000 FCFA</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 50%"></div>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg">Soutenir</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <!-- Optional JavaScript for Mobile Menu Toggle -->
+    <script>
+        const menuButton = document.querySelector('nav button[aria-controls="mobile-menu"]');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuButton.addEventListener('click', () => {
+            const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Example of incrementing stats for demo (can be replaced with real data)
+        document.getElementById('donators-count').textContent = '1,234';
+        document.getElementById('collects-count').textContent = '15';
+        document.getElementById('total-donations').textContent = '5 670 000';
+
+        // Donation form submission handler (simple alert for demo)
+        const donationForm = document.getElementById('donation-form');
+        donationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Merci pour votre générosité ! Votre don a bien été pris en compte.');
+            donationForm.reset();
+        });
+    </script>
+</body>
+
+</html>
