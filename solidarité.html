@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>SolidaireEnsemble</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">SolidaireEnsemble</div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Collectes</a>
+            <a href="#">Témoignages</a>
+            <a href="#">Faire un don</a>
+        </nav>
+        <div class="auth-buttons">
+            <button class="login">Se connecter</button>
+            <button class="signup">S'inscrire</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="collectes">
+            <!-- Carte 1 -->
+            <div class="carte">
+                <h3>Aide alimentaire pour la famille Diallo</h3>
+                <p>Aidez une famille de 6 personnes à faire face à des difficultés alimentaires après une mauvaise récolte.</p>
+                <div class="infos">
+                    <p><strong>Collecté :</strong> 450 000 FCFA</p>
+                    <p><strong>Objectif :</strong> 750 000 FCFA</p>
+                    <div class="progress-bar"><div class="bar" style="width:60%;"></div></div>
+                </div>
+                <button class="soutenir">Soutenir</button><a href="#" class="button" onclick="ouvrirModal()">Soutenir</a>
+            </div>
+<!-- MODALE de paiement cachée au départ -->
+<div id="modalPaiement" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:999;">
+  <div style="background:#fff; width:300px; margin:100px auto; padding:20px; border-radius:8px; text-align:center;">
+    <h3>Choisir un moyen de paiement</h3>
+    <button onclick="payer('Wave')">📲 Wave</button><br><br>
+    <button onclick="payer('Orange Money')">📱 Orange Money</button><br><br>
+    <button onclick="payer('Carte Bancaire')">💳 Carte bancaire</button><br><br>
+    <button onclick="fermerModal()">Annuler</button>
+  </div>
+
+            <!-- Carte 2 -->
+            <div class="carte">
+                <h3>Scolarité pour les enfants de Ndangane</h3>
+                <p>Financement des frais scolaires pour 25 enfants du village de Ndangane qui risquent d’abandonner l’école.</p>
+                <div class="infos">
+                    <p><strong>Collecté :</strong> 1 200 000 FCFA</p>
+                    <p><strong>Objectif :</strong> 2 500 000 FCFA</p>
+                    <div class="progress-bar"><div class="bar" style="width:48%;"></div></div>
+                </div>
+                <button class="soutenir">Soutenir</button><a href="#" class="button" onclick="ouvrirModal()">Soutenir</a>
+            </div>
+<!-- MODALE de paiement cachée au départ -->
+<div id="modalPaiement" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:999;">
+  <div style="background:#fff; width:300px; margin:100px auto; padding:20px; border-radius:8px; text-align:center;">
+    <h3>Choisir un moyen de paiement</h3>
+    <button onclick="payer('Wave')">📲 Wave</button><br><br>
+    <button onclick="payer('Orange Money')">📱 Orange Money</button><br><br>
+    <button onclick="payer('Carte Bancaire')">💳 Carte bancaire</button><br><br>
+    <button onclick="fermerModal()">Annuler</button>
+  </div>
+
+            <!-- Carte 3 -->
+            <div class="carte">
+                <h3>Construction d’un puits à Kédougou</h3>
+                <p>Aidez-nous à construire un puits pour permettre à 3 villages d’avoir accès à l’eau potable.</p>
+                <div class="infos">
+                    <p><strong>Collecté :</strong> 2 750 000 FCFA</p>
+                    <p><strong>Objectif :</strong> 3 500 000 FCFA</p>
+                    <div class="progress-bar"><div class="bar" style="width:79%;"></div></div>
+                </div>
+                <button class="soutenir">Soutenir</button><a href="#" class="button" onclick="ouvrirModal()">Soutenir</a>
+            </div><!-- MODALE de paiement cachée au départ -->
+<div< id="modalPaiement" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:999;">
+  <div style="background:#fff; width:300px; margin:100px auto; padding:20px; border-radius:8px; text-align:center;">
+    <h3>Choisir un moyen de paiement</h3>
+    <button onclick="payer('Wave')">📲 Wave</button><br><br>
+    <button onclick="payer('Orange Money')">📱 Orange Money</button><br><br>
+    <button onclick="payer('Carte Bancaire')">💳 Carte bancaire</button><br><br>
+    <button onclick="fermerModal()">Annuler</button>
+  </div>
+<script>
+  function ouvrirModal() {
+    document.getElementById("modalPaiement").style.display = "block";
+  }
+
+  function fermerModal() {
+    document.getElementById("modalPaiement").style.display = "none";
+  }
+
+  function payer(methode) {
+    alert("Paiement via " + methode + " en cours...");
+    // ICI, tu rediriges vers une vraie API ou service de paiement
+    // Exemple : window.location.href = "https://paiement.com/wave" (pour Wave)
+  }
+</script>
+        </section>
+
+        <div class="voir-plus">
+            <button class="voir-btn">Voir toutes les collectes</button>
+        </div>
+    </main>
+
+</body>
+</html>
